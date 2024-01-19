@@ -13,5 +13,15 @@ class Play extends Phaser.Scene{
     create() {
         console.log('Play: create')
         console.log(`HP: ${this.HP} EXP: ${this.EXP}`)
+
+        this.scene.add('statsoverlayScene', StatsOverlay, false)
+        this.scene.launch('statsoverlayScene') // launches a scene without killing current scene
+
+        this.add.image(0, 0, 'tomato').setOrigin(0).setScale(18)
+    }
+
+    update() {
+        //console.log('Play: update')
+        //console.log('BIG TOMATO')
     }
 }
